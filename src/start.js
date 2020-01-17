@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Component} from "react";
 class Fetch extends React.Component {
   constructor(props) {
     super(props);
