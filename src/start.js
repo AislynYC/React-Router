@@ -2,12 +2,10 @@ import React from "react";
 import Back from "./back";
 
 const StartPage = props => {
+  let list = props.content.map(item => <li> {item} </li>);
   return (
     <div>
-      <ul>
-        <li> {props.content[0]}</li>
-        <li> {props.content[1]}</li>
-      </ul>
+      <ul>{list}</ul>
       <Back />
     </div>
   );
