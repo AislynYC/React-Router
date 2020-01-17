@@ -1,14 +1,15 @@
 import React from "react";
 import Back from "./back";
 
-class StartPage extends React.Component {
-  render() {
-    return (
-      <div>
-        <p>這裡是start</p>
-        <Back />
-      </div>
-    );
-  }
-}
+const StartPage = props => {
+  return (
+    <div>
+      <ul>
+        <li> {props.content[0]}</li>
+        <li> {props.content[1]}</li>
+      </ul>
+      <Back />
+    </div>
+  );
+};
 export default StartPage;

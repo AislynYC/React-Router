@@ -3,10 +3,6 @@ import ReactDOM from "react-dom";
 import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import "./style.css";
 import Ajax from "./ajax";
-import Home from "./home";
-import StartPage from "./start";
-import ReactPage from "./react";
-import ReduxPage from "./redux";
 
 class App extends React.Component {
   splitData = () => {};
@@ -14,30 +10,30 @@ class App extends React.Component {
     return (
       <Router>
         <div>
-          <ul>
-            <li>
+          <ul class="menu">
+            <li class="menu">
               <Link to="/start">快速開始</Link>
             </li>
-            <li>
+            <li class="menu">
               <Link to="/react">React基礎</Link>
             </li>
-            <li>
+            <li class="menu">
               <Link to="/redux">Redux基礎</Link>
             </li>
           </ul>
         </div>
         <Switch>
           <Route exact path="/">
-            <Home />
+            <Ajax page="home" />
           </Route>
           <Route path="/start">
-            <StartPage />
+            <Ajax page="start" />
           </Route>
           <Route path="/react">
-            <ReactPage />
+            <Ajax page="react" />
           </Route>
           <Route path="/redux">
-            <ReduxPage />
+            <Ajax page="redux" />
           </Route>
         </Switch>
       </Router>

@@ -1,15 +1,16 @@
 import React from "react";
-import Ajax from "./ajax";
 import Back from "./back";
 
-class ReactPage extends React.Component {
-  render() {
-    return (
-      <div>
-        <Ajax />
-        <Back />
-      </div>
-    );
-  }
-}
+const ReactPage = props => {
+  return (
+    <div>
+      <ul>
+        <li> {props.content[0]}</li>
+        <li> {props.content[1]}</li>
+        <li> {props.content[2]}</li>
+      </ul>
+      <Back />
+    </div>
+  );
+};
 export default ReactPage;
