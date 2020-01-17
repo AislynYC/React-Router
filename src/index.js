@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
+import Home from "./home";
 import StartPage from "./start";
 import ReactPage from "./react";
 import ReduxPage from "./redux";
@@ -23,13 +24,16 @@ class App extends React.Component {
           </ul>
         </div>
         <Switch>
-          <Route exact path="/start">
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/start">
             <StartPage />
           </Route>
-          <Route exact path="/react">
+          <Route path="/react">
             <ReactPage />
           </Route>
-          <Route exact path="/redux">
+          <Route path="/redux">
             <ReduxPage />
           </Route>
         </Switch>

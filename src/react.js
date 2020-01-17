@@ -1,8 +1,14 @@
 import React from "react";
+import Back from "./back";
 
 class ReactPage extends React.Component {
   render() {
-    return <p>這裡是React</p>;
+    return (
+      <div>
+        <p>這裡是React</p>
+        <Back />
+      </div>
+    );
   }
 }
 export default ReactPage;
