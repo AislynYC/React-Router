@@ -8,7 +8,7 @@ class App extends React.Component {
   splitData = () => {};
   render() {
     return (
-      <Router>
+      <Router basename="/React-Router/dist">
         <div>
           <ul className="menu">
             <li className="menu">
