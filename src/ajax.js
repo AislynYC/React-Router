@@ -1,9 +1,9 @@
 import React from "react";
-class Fetch extends React.Component {
+class Ajax extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      rsobj: {},
+      resObj: {},
       isLoaded: false,
       error: null
     };
@@ -12,32 +12,30 @@ class Fetch extends React.Component {
   componentDidMount() {
     fetch(" https://cwpeng.github.io/live-records-samples/data/content.json")
       .then(res => res.json())
-      .then(
-        result => {
-          this.setState({
-            isLoaded: true,
-            rsobj: result
-          });
-        },
-        error => {
-          this.setState({
-            isLoaded: true,
-            error: error
-          });
-        }
-      );
+      .then(result => {
+        this.setState({
+          isLoaded: true,
+          resObj: result
+        });
+      })
+      .catch(error => {
+        this.setState({
+          isLoaded: true,
+          error: error
+        });
+      });
   }
 
   render() {
-    const {isLoaded, error, rsobj} = this.state;
+    const {isLoaded, error, resObj} = this.state;
     if (error) {
       return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
       return <div>Loading...</div>;
     } else {
-      return <p>{JSON.stringify(rsobj)}</p>;
+      return <p>{JSON.stringify(resObj)}</p>;
     }
   }
 }
 
-export default Fetch;
+export default Ajax;
