@@ -10,14 +10,14 @@ class App extends React.Component {
     return (
       <Router>
         <div>
-          <ul class="menu">
-            <li class="menu">
+          <ul className="menu">
+            <li className="menu">
               <Link to="/start">快速開始</Link>
             </li>
-            <li class="menu">
+            <li className="menu">
               <Link to="/react">React基礎</Link>
             </li>
-            <li class="menu">
+            <li className="menu">
               <Link to="/redux">Redux基礎</Link>
             </li>
           </ul>
